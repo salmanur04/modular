@@ -54,3 +54,7 @@ require_once 'template/navbar.php';
     </center>
 </body>
 </html>
+
+<?php
+require_once 'template/footer.php';
+?>

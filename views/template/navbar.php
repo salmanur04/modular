@@ -19,11 +19,13 @@
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="A.php">A</a></li>
-        <li><a class="dropdown-item" href="B.php">B</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="C.php">C</a></li>
-        <hr class="dropdwon-divider">
+        <li><a class="dropdown-item" href="latihan1.php">Latihan 1</a></li>
+        <li><a class="dropdown-item" href="latihan2.php">Latihan 2</a></li>
+        <li><a class="dropdown-item" href="latihan3.php">Latihan 3</a></li>
+        <li><a class="dropdown-item" href="latihan4.php">Latihan 4</a></li>
+        <li><a class="dropdown-item" href="latihan5.php">Latihan 5</a></li>
+        <li><a class="dropdown-item" href="latihan6.php">Latihan 6</a></li>
+        <li><a class="dropdown-item" href="latihan7.php">Latihan 7</a></li>
       </ul>
     </li>
     <li class="nav-item">

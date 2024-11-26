@@ -66,4 +66,17 @@ class user
         echo "tidak ada data";
      }
     }
-}
+
+    function tambah_user($id, $username,$email,$password,$nama,$alamat,$jk,$tempatlahir, $tanggallahir){
+      $conn = new koneksi();
+      $sql = "INSERT INTO user VALUES ('$id', '$username','$email','$password','$nama','$alamat','$jk','$tempatlahir', '$tanggallahir')";
+      $query = mysqli_query($conn->koneksi,$sql);
+  
+      if ($query) {
+        echo "<script>alert('data berhasil ditambahkan'), window.location='../views/latihan7.php'</script>";
+      } else {
+        echo "<script>alert('data gagal ditambahkan'), window.location='../views/form.php'</script>";
+      }
+      
+    } 
+    }

@@ -4,53 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tambah User</title>
 </head>
 
 <body>
-
-    <h1>Tambah User</h1>
-
-    <form action="form_action.php" method="post">
-        <label for="username">Username :</label>
-        <input type="text" name="usernmae" placeholder="Username" id="username" required>
-        <br>
-        <br>
-        <label for="email">Email :</label>
-        <input type="email" name="email" placeholder="Email" id="email" required>
-        <br>
-        <br>
-        <label for="password">Password :</label>
-        <input type="passsword" name="password" placeholder="Password" id="password" required>
-        <br>
-        <br>
-        <label for="nama_user">Nama User :</label>
-        <input type="text" name="nama_user" placeholder="Nama User" id="nama_user" required>
-        <br>
-        <br>
-        <label for="alamat_user">Alamat User :</label>
-        <input type="text" name="alamat_user" placeholder="Alamat User" id="alamat_user" required>
-        <br>
-        <br>
-        <label for="jenis_kelamin">Laki-laki</label>
-        <select id="jenis_kelamin" name="jenis_kelamin">
-            <option value="laki-laki">Laki-Laki</option>
-            <option value="perempuan">perempuan</option>
-        </select>
-        <br>
-        <br>
-        <label for="tempatlahir_user">Tempat Lahir :</label>
-        <input type="text" name="tempatlahir_user" placeholder="Tempat Lahir" id="tempatlahir_user" required>
-        <br>
-        <br>
-        <label for="tanggallahir_user">Tanggal Lahir :</label>
-        <input type="date" name="tanggallahir_user" placeholder="Tanggal Lahir" id="tanggallahir_user" required>
-        <br>
-        <br>
-        <button type="submit" name="kirim">Kirim</button>
+<center>
+    <h2>Tambah User</h2>
+    <form action="../controllers/c_user.php?aksi=tambah" method="post">
+      <table>
+        <tr>
+        <td><label for="username">Username:</label></td>
+        <input type="text" id="username" name="id_user" hidden>
+        <td><input type="text" name="username" id="username" required></td>
+        </tr>
+        <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" name="email" id="email" required></td>
+        </tr>
+        <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" id="password" required></td>
+        </tr>
+        <tr>
+        <td><label for="nama_user">Nama:</label></td>
+        <td><input type="text" name="nama_user" id="nama_user" required></td>
+        </tr>
+        <tr>
+        <td><label for="alamat_user">Alamat:</label></td>
+        <td><input type="text" name="alamat_user" id="alamat_user" required></td>
+        </tr>
+        <tr>
+        <td><label for="jenis_kelamin">Jenis Kelamin:</label></td>
+        <td><select name="jenis_kelamin" id="jenis_kelamin">
+        <option value="laki-laki">Laki-laki</option>
+        <option value="perempuan">Perempuan</option>
+        </select></td>
+        </tr>
+        <tr>
+        <td><label for="tempatlahir_user">Tempat Lahir:</label></td>
+        <td><input type="text" name="tempatlahir_user" id="tempatlahir_user" required></td>
+        </tr>
+        <tr>
+        <td><label for="tanggallahir_user">Tanggal Lahir:</label></td>
+        <td><input type="date" name="tanggallahir_user" id="tanggallahir_user" required></td>
+        </tr>
+        <tr>
+          <td><button type="submit" name="tambah">Submit</button></td>
+      </tr>
+        </table>
     </form>
-
-
+  </center>
 </body>
 
 </html>
