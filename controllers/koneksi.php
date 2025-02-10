@@ -11,7 +11,7 @@ class koneksi
     private $server = "localhost";
     private $username ="root";
     private $pass="";
-    private $database = "latihanrpl2";
+    private $database = "latihan_11rpl2";
 
     //berfungsi untuk mengembalikan nilai dari koneksi ke database jika koneksi nya berhasil
     public $koneksi;

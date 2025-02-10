@@ -16,6 +16,7 @@ require_once 'template/navbar.php';
 <body>
     <center><h3>Latihan Menampilkan data dari tabel user dan urutkan data berdasarkan nama user dari yang terkecil sampai ke terbesar</h3></center>
     <center>
+    <p><a href="latihan3.php">Ke Latihan 3</a></p>
         
         <table border="1" ellspacing="0" cellpadding="5">
             <thead>

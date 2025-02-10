@@ -66,6 +66,7 @@ class user
         echo "tidak ada data";
      }
     }
+    
 
     function tambah_user($id, $username,$email,$password,$nama,$alamat,$jk,$tempatlahir, $tanggallahir){
       $conn = new koneksi();
@@ -73,10 +74,55 @@ class user
       $query = mysqli_query($conn->koneksi,$sql);
   
       if ($query) {
-        echo "<script>alert('data berhasil ditambahkan'), window.location='../views/latihan7.php'</script>";
+        echo "<script>alert('data berhasil ditambahkan'), window.location='../views/dasboard.php'</script>";
       } else {
-        echo "<script>alert('data gagal ditambahkan'), window.location='../views/form.php'</script>";
+        echo "<script>alert('data gagal ditambahkan'), window.location='../views/edit.php'</script>";
       }
       
     } 
+    
+    function tampil_data_byid($id){
+      $conn = new koneksi();
+      $sql = "SELECT *  FROM user WHERE id_user = $id";
+    
+      $query = mysqli_query($conn->koneksi,$sql);
+    
+      if ($query-> num_rows > 0) {
+        while($data = mysqli_fetch_object($query)){
+          $result[] = $data;
+        }
+        return $result;
+      } else {
+        echo "Tidak Ada Data";
+      }
     }
+
+    function ubah_user($id, $username, $email, $password, $nama, $alamat, $jk, $tempatlahir, $tanggallahir)
+    {
+        $conn = new koneksi();
+        $sql = "UPDATE user SET username = '$username', email = '$email', password = '$password', nama_user = '$nama', alamat_user = '$alamat', jenis_kelamin = '$jk', tempatlahir_user = '$tempatlahir', tanggallahir_user = '$tanggallahir' WHERE id_user = '$id' ";
+        // var_dump($sql);
+        // exit;
+        $query = mysqli_query($conn->koneksi, $sql);
+  
+        if ($query) {
+            echo "<script>alert('Data Berhasil Di Ubah');window.location='../views/dasboard.php'</script>";
+        } else {
+            echo "<script>alert('Data Tidak Berhasil Di Ubah');window.location='../views/edit.php'</script>";
+        }
+    }
+  
+
+    function hapus_user($id)
+    {
+        $conn = new koneksi();
+  
+        $query = "DELETE FROM user WHERE id_user = $id";
+  
+        mysqli_query($conn->koneksi, $query);
+  
+        header("location:../views/dasboard.php");
+  }
+  }
+    ?>
+  

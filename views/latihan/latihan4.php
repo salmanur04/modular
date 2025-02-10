@@ -14,9 +14,10 @@ require_once 'template/navbar.php';
 </head>
 
 <body>
-    <center><h3>Latihan Menampilkan Data dari tabel user dan tampilkan data user yang Lahir di Bulan Februari</h3></center>
+    <center><h3>Latihan Menampilkan Data dari tabel user dan tampilkan data user yang Lahirnya di Bandung</h3></center>
     <center>
-        <table border="1"ellspacing="0" cellpadding="5">
+    <p><a href="latihan5.php">Ke Latihan 5</a></p>
+        <table border="1" ellspacing="0" cellpadding="5">
             <thead>
                 <tr>
                     <th>No</th>
@@ -30,30 +31,25 @@ require_once 'template/navbar.php';
             <?php
             $no = 1;
 
-            // Dapatkan data pengguna
             $data_users = $user->tampil_data();
 
-            // Urutkan data berdasarkan nama
             usort($data_users, function ($a, $b) {
                 return strcmp(strtolower($a->nama_user), strtolower($b->nama_user));
             });
 
-            // Tampilkan data pengguna yang lahir di bulan Februari
+            // Tampilkan user yang lahir di Bandung
             foreach ($data_users as $data) {
-                // Ambil bulan dari tanggal lahir
-                $bulan_lahir = date('m', strtotime($data->tanggallahir_user));
-
-                if ($bulan_lahir == '02') { // Februari = bulan 02
+                if (strtolower($data->tempatlahir_user) === 'bandung') {
                     $tanggal_sekarang = new DateTime();
                     $tanggal_lahir = new DateTime($data->tanggallahir_user);
                     $umur = $tanggal_sekarang->diff($tanggal_lahir);
             ?>
                 <tr>
                     <th scope="row"><?= $no++ ?></th>
-                    <td><?= htmlspecialchars($data->nama_user) ?></td>
-                    <td><?= htmlspecialchars($umur->y) ?></td>
-                    <td><?= htmlspecialchars($data->tempatlahir_user) . ", " . date("d F Y", strtotime($data->tanggallahir_user)) ?></td>
-                    <td><?= htmlspecialchars($data->alamat_user) ?></td>
+                    <td><?=  ($data->nama_user) ?></td>
+                    <td><?=  ($umur->y) ?></td>
+                    <td><?=  ($data->tempatlahir_user) . ", " . date("d F Y", strtotime($data->tanggallahir_user)) ?></td>
+                    <td><?=  ($data->alamat_user) ?></td>
                 </tr>
             <?php 
                 } 

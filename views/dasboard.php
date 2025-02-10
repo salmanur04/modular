@@ -14,7 +14,7 @@ require_once 'template/navbar.php';
 </head>
 
 <body>
-    <center><h3>Latihan Menampilkan data dari tabel user</h3></center>
+    <center><h3>daftar user</h3></center>
     <center>
     
         
@@ -42,6 +42,19 @@ require_once 'template/navbar.php';
                     <td><?= $umur->y ?></td>
                     <td><?= $data->tempatlahir_user . ", " . date("d F Y", strtotime($data->tanggallahir_user)) ?></td>
                     <td><?= $data->alamat_user ?></td>
+                    <td>
+                    <center>
+                        <a href="edit.php?id=<?=
+                        $data->id_user ?>"><button
+                        type="button" class="btn btn-round
+                        btn-primary">edit</button></a>
+                        
+                        <a onclick = "return confirm ('apakah yakin data akan dihapus?')"
+                        href="../controllers/c_user.php?id=<?=
+                        $data->id_user ?>&aksi=hapus"><button type="button" nama="hapus" class="btn btn-round
+                        btn-danger">hapus</button></a>
+            </center>
+            </td>
                 </tr>
             <?php } ?>
             </tbody>

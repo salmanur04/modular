@@ -8,6 +8,7 @@ require_once 'template/navbar.php';
 
 <center><h3>Latihan Menampilkan data dari tabel user dan tampilkan data user yang memiliki umur dari 21 sampai 30 tahun</h3></center>
 <center>
+<p><a href="latihan4.php">Ke Latihan 4</a></p>
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
         <tr>
